@@ -12,8 +12,9 @@ describe('Orange HRM Tests', () => {
     firstNameField: "[name='firstName']",
     lastNameField: "[name='lastName']",
     genericField: ".oxd-input--active",
-    clickOutField: ".oxd-layout-context",
-    myNationality: "[clear='false']"
+    dateField: "[placeholder='yyyy-dd-mm']",
+    dataCloseField: '.--close',
+    submitButton: "[type='submit']"
   }
 
  it.only('User Info Updade - Sucess', () => {
@@ -29,9 +30,12 @@ describe('Orange HRM Tests', () => {
     cy.get(selectorsList.genericField).eq(3).clear().type('LdTest')
     cy.get(selectorsList.genericField).eq(4).clear().type('otherIdTest')
     cy.get(selectorsList.genericField).eq(5).clear().type('driversTeste')
-    cy.get(selectorsList.genericField).eq(6).clear().type('2025-15-03')
-    cy.get(selectorsList.clickOutField).click()
-    cy.get(selectorsList.myNationality).eq(0).click()
+    cy.get(selectorsList.dateField).eq(0).clear().type('2025-15-03')
+    cy.get(selectorsList.dataCloseField).click()
+    cy.get(selectorsList.submitButton).eq(0).click()
+    cy.get('body').should('contain', 'Successfully Updated')
+    cy.get('.oxd-toast')
+    
   })
 
   it('login - fail', () => {
