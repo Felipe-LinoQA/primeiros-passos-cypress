@@ -1,1 +1,20 @@
-# My Automation
+# My cypress Automation
+
+This projet utilizes cypress to automate the testing of a login feature and a user update feature. Cypress is a JavaScript-based end-to-end testing framework that allows  developers to write tests and execute them is a reaç browser 
+
+## Installation 
+```bash
+npm install
+```
+> **NOTE:**
+>
+> it is necessary to have **node** installed
+
+## Runnig
+ ```bash
+# You open the cypress UI
+  npx cypress open
+
+# Run the automation by command line
+  npx cypress run
+```
